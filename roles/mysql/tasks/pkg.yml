@@ -1,0 +1,6 @@
+---
+- name: adding mysql remo
+  get_url:
+      url: https://dev.mysql.com/get/mysql-apt-config_0.8.6-1_all.deb
+      dest: "{{home_dir}}"
+      mode: 777

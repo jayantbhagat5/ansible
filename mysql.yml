@@ -1,0 +1,8 @@
+---
+- hosts: db57
+  user: nmg
+  become: yes
+  roles:
+     - mysql
+
+  

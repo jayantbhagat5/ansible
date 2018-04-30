@@ -1,0 +1,14 @@
+---
+- name: install mysql repo
+  apt: "deb={{home_dir}}/mysql-apt-config_0.8.6-1_all.deb"  
+  become: true  
+#- name: install python-mysqldb
+- name: update repo
+  apt: name=$item state=latest update_cache=yes
+  with_items:
+     - python-software-properties
+     - python-mysqldb	
+- name: check latest version
+  command: bash -c "apt-cache showpkg mysql-server|grep 5.7|head -1|cut -d' ' -f1"
+  register: latestmysql57
+- debug: msg= "{{ latestmysql57.stdout }}"

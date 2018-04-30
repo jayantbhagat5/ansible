@@ -1,0 +1,5 @@
+---
+# vars file for mysql
+mysql_root_password: root
+home_dir: "/home/nmg/mysql"
+mode: 0777
